@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IEEE AOU - Login</title>
+  <link rel="shortcut icon" href="images/IEEE AOU LOGO.png" type="image/x-icon">
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #003c71, #0078d7);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #003c71;
+  font-size: 1.5rem;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #0078d7;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #003c71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #002a55;
+}
+
+#message {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  min-height: 1.2rem;
+}
+
+#message.success {
+  color: #28a745;
+}
+
+#message.error {
+  color: #dc3545;
+}
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>IEEE AOU Certification System</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required autocomplete="off" />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">Login</button>
+        <p id="message"></p>
+      </form>
+    </div>
+  </div>
+
+<script>
+  // Disable back and forward navigation permanently on this page
+  function disableNavigation() {
+    history.pushState(null, '', location.href);
+    window.onpopstate = function () {
+      history.pushState(null, '', location.href);
+    };
+  }
+
+  // Apply immediately
+  disableNavigation();
+
+  // Re-apply when the page is shown again (after reload, navigation, etc.)
+  window.addEventListener('pageshow', disableNavigation);
+
+  // Login logic
+  document.getElementById('loginForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+    const messageEl = document.getElementById('message');
+
+    try {
+      const response = await fetch('users.json');
+      if (!response.ok) throw new Error('Failed to load user data.');
+
+      const users = await response.json();
+
+      if (users[username] && users[username] === password) {
+        messageEl.className = 'success';
+        messageEl.textContent = 'Login successful! Redirecting...';
+
+        // Redirect after success
+        setTimeout(() => {
+          window.location.href = 'certifications.html';
+        }, 1000);
+      } else {
+        messageEl.className = 'error';
+        messageEl.textContent = 'Invalid username or password.';
+      }
+    } catch (err) {
+      console.error(err);
+      messageEl.className = 'error';
+      messageEl.textContent = 'Error loading user data. Please try again later.';
+    }
+  });
+</script>
+
+</body>
+</html>

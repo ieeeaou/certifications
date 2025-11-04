@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-1: #022d58;
+  --color-2: #ffffff;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9fb;
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--color-1);
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+/* Form Section */
+#software\ content {
+  max-width: 1600px;
+  margin: 0 auto;
+  background: var(--color-2);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+fieldset {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  background-color: #fafafa;
+}
+
+legend {
+  font-weight: 600;
+  color: var(--color-1);
+  font-size: 1.1rem;
+  padding: 0 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
+}
+
+input::placeholder {
+  color: #999;
+}
+
+
+.btn{
+    padding: 10px;
+    color: var(--color-2);
+    background-color: var(--color-1);
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover{
+    background-color: #016bc7;
+}
+
+
+
+
+/* Certification Preview Area */
+#certificationstyle {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+/* A4 Landscape */
+.certificationarea {
+  height: 794px;
+  width: 1123px;
+  background: white;
+  background-image:
+    linear-gradient(135deg, transparent 0%, transparent 6%, rgba(71, 71, 71, 0.04) 6%, rgba(71, 71, 71, 0.04) 22%, transparent 22%),
+    linear-gradient(45deg, transparent 0%, transparent 20%, rgba(71, 71, 71, 0.04) 20%, rgba(71, 71, 71, 0.04) 47%, transparent 47%),
+    linear-gradient(135deg, transparent 0%, transparent 24%, rgba(71, 71, 71, 0.04) 24%, rgba(71, 71, 71, 0.04) 62%, transparent 62%),
+    linear-gradient(45deg, transparent 0%, transparent 73%, rgba(71, 71, 71, 0.04) 73%, rgba(71, 71, 71, 0.04) 75%, transparent 75%);
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.bluesquare {
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 600px;
+  height: 200px;
+  background-color: var(--color-1);
+  transform: rotate(30deg);
+  z-index: 0;
+}
+
+.blueline{
+    width: 100%;
+    height: 75px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-1);
+}
+
+.logos {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  align-items: flex-start;
+}
+
+.logos img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  max-width: 200px;
+}
+
+.certitifate-title{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    color: var(--color-1);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+
+.certitifate-subtitle{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color: var(--color-1);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.certitifate-name{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: var(--color-1);
+    font-family: "Lucida Handwriting", cursive;
+    font-weight: bold;
+}
+
+.certitifate-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: var(--color-1);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    width: 70%;
+    text-align: center;
+}
+
+/* signature */
+.signatures {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 100px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 20px;
+    color: var(--color-1);
+}
+
+.signature-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signature-block img {
+    height: 40px;
+    width: auto;
+    margin-bottom: 5px;
+}

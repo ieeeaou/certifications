@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="images/IEEE AOU LOGO.png" type="image/x-icon">
+    <title>IEEE AOU Certifications</title>
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1>IEEE AOU Certifications Printing System</h1>
+
+    <section id="software content">
+
+        <fieldset>
+            <legend>Certification type</legend>
+            <select name="type" id="certificationType">
+                <option value="participation">Participation</option>
+                <option value="completion">Completion</option>
+                <option value="excellence">Excellence</option>
+                <option value="appreciation">Appreciation</option>
+            </select>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Name of the person who received the certificate</legend>
+            <input type="text" id="name" name="name" placeholder="Enter full name here">
+        </fieldset>
+
+        <fieldset>
+            <legend>Certificate Content</legend>
+            <input type="text" id="certificate-content" name="certificate-content" placeholder="Enter Certificate Content here">
+        </fieldset>
+
+
+        <input type="submit" class="btn" value="Generate Certificate" id="generateCertificateBtn">
+        <input type="button" class="btn" id="printCertificateBtn" value="Save as PDF">
+
+    </section>
+
+    <section id="certificationstyle">
+
+        <div class="certificationarea">
+            <div class="bluesquare"></div>
+            <div class="logos">
+                <img src="images/IEEE AOU LOGO.png" alt="IEEE AOU Logo">
+                <img src="images/aou logo.png" alt="AOU Logo">
+            </div>
+
+            <!-- certificate content -->
+
+            <p class="certitifate-title" id="certification-title">
+            </p>
+
+            <p class="certitifate-subtitle">
+                Present to
+            </p>
+
+            <p class="certitifate-name" id="certifiedName">
+            </p>
+
+            <p class="certitifate-text" id="certificationText">
+            </p>
+
+            <!--the 3 signatures -->
+            <div class="signatures">
+                <div class="signature-block">
+                    <img src="signatures/Tony El Chediac.png" alt="signature">
+                    <p class="signature-title">Head of IEEE AOU Media</p>
+                    <p class="signature-name">Mr. Tony El Chediac</p>
+                </div>
+                <div class="signature-block">
+                    <img src="signatures/shaymaa jawish signature.png" alt="signature">
+                    <p class="signature-title">Chairperson of IEEE AOU</p>
+                    <p class="signature-name">Ms. Shaymaa Jawish</p>
+                </div>
+                <div class="signature-block">
+                    <img src="" alt="signature">
+                    <p class="signature-title">Coordinator of IEEE AOU</p>
+                    <p class="signature-name">Dr. Khouloud Samrouth</p>
+                </div>
+            </div>
+
+            <div class="blueline"></div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </section>
+
+</body>
+</html>
